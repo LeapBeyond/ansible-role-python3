@@ -1,6 +1,6 @@
 ---
 # A list of system packages to be installed.
-system_packages: [python36u, python36u-devel, python36u-pip]
+system_packages: [python36, python36-devel, python36-pip]
 
 # A list of python packages to be installed.
-python_packages: [conda-forge, pandas, numpy, matplotlib, seaborn, fbprophet]
+python_packages: [conda-forge, pandas=0.23.4, numpy, matplotlib, seaborn, fbprophet]

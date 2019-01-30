@@ -1,15 +1,12 @@
 ---
-- name: Requirements for Python install
-  block:
-    - name: install IUS repo
-      become: true
-      yum:
-        name: "https://centos7.iuscommunity.org/ius-release.rpm"
-        state: present
-        update_cache: true
+- name: Install Python 3.6
+    become: true
+    yum:
+      name: "{{ system_packages }}"
+      state: present
 
-    - name: install system packages
-      become: true
-      yum:
-        name: "{{ system_packages }}"
-        state: present
+- name: Install Python Packages
+    become: true
+    pip:
+      name: "{{ python_packages }}"
+      state: present
