@@ -1,12 +1,10 @@
 ---
-- name: Install Python 3.6
-    become: true
-    yum:
-      name: "{{ system_packages }}"
-      state: present
+- name: Install Python 3.7
+  yum:
+    name: "{{ system_packages }}"
+    state: present
 
 - name: Install Python Packages
-    become: true
-    pip3:
-      name: "{{ python_packages }}"
-      state: present
+  pip:
+    name: "{{ python_packages }}"
+    executable: pip-3.7
